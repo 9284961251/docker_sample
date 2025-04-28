@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend</title>
+</head>
+<body>
+    <h1>Frontend App</h1>
+    <button onclick="fetchData()">Get Backend Data</button>
+    <p id="result"></p>
+
+    <script>
+        async function fetchData() {
+            const res = await fetch('/get-backend-data');
+            const data = await res.json();
+            document.getElementById('result').innerText = data.message || data.error;
+        }
+    </script>
+</body>
+</html>
